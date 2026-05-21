@@ -1,0 +1,17 @@
+cmake_minimum_required(VERSION 3.30)
+project(volt-nn LANGUAGES CXX CUDA)
+
+set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_CUDA_STANDARD 20)
+set(CMAKE_CUDA_ARCHITECTURES native)
+
+message(STATUS "---------------------------------------------------")
+message(STATUS ">> Current CUDA Architectures: ${CMAKE_CUDA_ARCHITECTURES}")
+message(STATUS ">> CUDA Compiler Version: ${CMAKE_CUDA_COMPILER_VERSION}")
+message(STATUS "---------------------------------------------------")
+
+add_executable(${PROJECT_NAME} 
+    demo.cu
+    gnn.cuh
+    gnn.cu
+)
