@@ -12,6 +12,12 @@ message(STATUS "---------------------------------------------------")
 
 add_executable(${PROJECT_NAME} 
     demo.cu
+    matrix_ops.cuh
+    matrix_ops.cu
+
+    utils.cuh
+    utils.cu
+
     gnn.cuh
     gnn.cu
 )
