@@ -52,6 +52,12 @@ void GNN::initWeights()
     // -1 becuase output size
     for (size_t i = 0; i < m_LayerSizes.size() - 1; i++)
     {
+        int input_size = m_LayerSizes[i];
+        int output_size = m_LayerSizes[i + 1];
 
+        // allocate gpu memory for weights
+        float* dw;
+        cudaMalloc(&dw, input_size * output_size * sizeof(float));
+        
     }
 }
